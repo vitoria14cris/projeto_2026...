@@ -1,1 +1,6 @@
+function aleatorio(lista) {
 
+}
+function aleatorio(lista) {
+    const posicao = Math.random()* lista.length;
+}
