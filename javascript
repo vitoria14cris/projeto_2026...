@@ -1,9 +1,25 @@
-// ... suas funções anteriores (como mostraPergunta) ...
+// ... outras partes do código e variáveis como historiaFinal, atual ...
 
-function aleatorio(lista) {
-    const posicao = Math.floor(Math.random() * lista.length);
-    return lista[posicao];
+function respostaSelecionada(opcaoSelecionada) {
+    // Sorteia uma das várias afirmações que aquela opção possui
+    const afirmacoes = aleatorio(opcaoSelecionada.afirmacao);
+    
+    // Concatena a afirmação sorteada na história final com um espaço
+    historiaFinal += afirmacoes + " ";
+    
+    // Avança para o índice da próxima pergunta
+    atual++;
+    
+    // Chama a função para desenhar a próxima pergunta na tela
+    mostraPergunta();
 }
 
-// ... suas funções seguintes (como mostraResultado) ...
+// ... outra parte do código ...
 
+function aleatorio(lista) {
+    // Sorteia o índice de 0 até o tamanho máximo da lista informada
+    const posicao = Math.floor(Math.random() * lista.length);
+    
+    // Retorna textualmente o item correspondente àquela posição
+    return lista[posicao];
+}
